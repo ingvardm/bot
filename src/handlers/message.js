@@ -29,6 +29,40 @@ const message = (sender_psid, received_message) => {
                         "payload": "no",
                     }
                 ]
+            },
+            {
+                title: 'first item',
+                subtitle: 'best item ever',
+                image_url: attachment_url,
+                buttons: [
+                    {
+                        "type": "postback",
+                        "title": "Yes!",
+                        "payload": "yes",
+                    },
+                    {
+                        "type": "postback",
+                        "title": "No!",
+                        "payload": "no",
+                    }
+                ]
+            },
+            {
+                title: 'first item',
+                subtitle: 'best item ever',
+                image_url: attachment_url,
+                buttons: [
+                    {
+                        "type": "postback",
+                        "title": "Yes!",
+                        "payload": "yes",
+                    },
+                    {
+                        "type": "postback",
+                        "title": "No!",
+                        "payload": "no",
+                    }
+                ]
             }
         ])
     }
