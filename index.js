@@ -4,10 +4,8 @@ const request = require('request')
 
 const routs = require('./src/routs')
 
-console.log(routs)
-
 const app = express()
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8080
 
 app.set('port', port)
 app.use(bodyParser.urlencoded({extended:false}))
@@ -16,5 +14,5 @@ app.use(bodyParser.json())
 routs.forEach(rout => app.get(rout.path, rout.callback))
 
 app.listen(port, () => {
-    console.log(`listening on port ${port}`)
+    console.log(`running on http://localhost:${port}/`)
 })

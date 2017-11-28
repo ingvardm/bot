@@ -9,6 +9,6 @@ module.exports = [
     },
     {
         path: '/say/:word',
-        callback: (raq, res) => res.send(req.params)
+        callback: (req, res) => res.send(req.params.word)
     }
 ]
