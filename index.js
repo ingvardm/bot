@@ -1,7 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-// const request = require('request')
-
 const routs = require('./src/routs')
 
 const app = express()
