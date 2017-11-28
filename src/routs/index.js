@@ -11,12 +11,11 @@ module.exports = [
             let mode = req.query['hub.mode']
             let token = req.query['hub.verify_token']
             let challenge = req.query['hub.challenge']
-            console.log(mode, mode === 'subscribe' && token === FB_VERIFY_TOKEN, FB_VERIFY_TOKEN)
             if (mode === 'subscribe' && token === FB_VERIFY_TOKEN) {
                 console.log('WEBHOOK_VERIFIED')
                 res.status(200).send(challenge)
             }
-            console.log('VERIFICATION_ERROR ' + req.query)
+            console.log('VERIFICATION_ERROR')
             res.sendStatus(403)
         }
     }
