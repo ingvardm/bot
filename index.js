@@ -13,8 +13,6 @@ app.set('port', port)
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
-// Object.keys(routs).forEach(rout => app.get(rout, routs[rout]))
-
 routs.forEach(rout => app.get(rout.path, rout.callback))
 
 app.listen(port, () => {
