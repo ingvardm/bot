@@ -9,7 +9,7 @@ const message = (sender_psid, received_message) => {
         }
     } else if (received_message.attachments) {
         let attachment_url = received_message.attachments[0].payload.url
-        response = new Image(attachment_url)
+        response = {attachment: new Image(attachment_url)}
         console.log(response)
     }
     callSendAPI(sender_psid, response)
