@@ -1,3 +1,5 @@
+const {FB_VERIFY_TOKEN, FB_PAGE_ACCESS_TOKEN} = require('../tokens')
+
 module.exports = [
     {
         path: '/',
@@ -6,32 +8,16 @@ module.exports = [
     {
         path: '/webhook/',
         callback: (req, res) => {
-            
-              // Your verify token. Should be a random string.
-              let VERIFY_TOKEN = "enkqwenfkev"
-                
-              // Parse the query params
-              let mode = req.query['hub.mode'];
-              let token = req.query['hub.verify_token'];
-              let challenge = req.query['hub.challenge'];
-
-              console.log(req.query)
-                
-              // Checks if a token and mode is in the query string of the request
-              if (mode && token) {
-              
-                // Checks the mode and token sent is correct
-                if (mode === 'subscribe' && token === VERIFY_TOKEN) {
-                  
-                  // Responds with the challenge token from the request
-                  console.log('WEBHOOK_VERIFIED');
-                  res.status(200).send(challenge);
-                
-                } else {
-                  // Responds with '403 Forbidden' if verify tokens do not match
-                  res.sendStatus(403);
-                }
-              } res.sendStatus(403);
+            let mode = req.query['hub.mode']
+            let token = req.query['hub.verify_token']
+            let challenge = req.query['hub.challenge']
+            console.log(mode, mode === 'subscribe' && token === FB_VERIFY_TOKEN, FB_VERIFY_TOKEN)
+            if (mode === 'subscribe' && token === FB_VERIFY_TOKEN) {
+                console.log('WEBHOOK_VERIFIED')
+                res.status(200).send(challenge)
             }
+            console.log('VERIFICATION_ERROR ' + req.query)
+            res.sendStatus(403)
+        }
     }
 ]
