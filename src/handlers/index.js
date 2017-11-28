@@ -1,4 +1,4 @@
-module.exports = {
-    messageRecieved = require('./message-recieved'),
-    subscribe = require('./subscribe')
-}
+const messageRecieved = require('./message-recieved')
+const subscribe = require('./subscribe')
+
+module.exports = { messageRecieved, subscribe }
