@@ -8,7 +8,7 @@ module.exports = [
         callback: (req, res) => {
             
               // Your verify token. Should be a random string.
-              let VERIFY_TOKEN = "<YOUR_VERIFY_TOKEN>"
+              let VERIFY_TOKEN = "enkqwenfkev"
                 
               // Parse the query params
               let mode = req.query['hub.mode'];
