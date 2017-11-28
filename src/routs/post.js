@@ -1,5 +1,5 @@
 const { FB_PAGE_ACCESS_TOKEN } = require('../tokens')
-const { subscribe } = require('../handlers')
+const { subscribe, message, postBack, callSendApi } = require('../handlers')
 
 module.exports = [
     {
@@ -10,7 +10,11 @@ module.exports = [
                 body.entry.forEach(entry => {
                     let webhook_event = entry.messaging[0];
                     let sender_psid = webhook_event.sender.id;
-                    console.log('Sender PSID: ' + sender_psid);
+                    if (webhook_event.message) {
+                        message(sender_psid, webhook_event.message);
+                    } else if (webhook_event.postback) {
+                        postBack(sender_psid, webhook_event.postback);
+                    }
                 });
                 res.status(200).send('EVENT_RECEIVED');
 
