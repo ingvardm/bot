@@ -1,3 +1,3 @@
-const Image = require('./Image')
+const generic = require('./generic')
 
-module.exports = { Image }
+module.exports = { generic }

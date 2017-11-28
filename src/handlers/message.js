@@ -1,5 +1,5 @@
 const callSendAPI = require('./call-send-api')
-const { Image } = require('../templates')
+const templates = require('../templates')
 
 const message = (sender_psid, received_message) => {
     let response;
@@ -12,30 +12,25 @@ const message = (sender_psid, received_message) => {
         // response = {attachment: new Image(attachment_url)}
         // console.log(response)
         // console.log(response.attachment.payload.elements[0])
-        response = {
-            "attachment": {
-              "type": "template",
-              "payload": {
-                "template_type": "generic",
-                "elements": [{
-                  "title": "Is this the right picture?",
-                  "subtitle": "Tap a button to answer.",
-                  "image_url": attachment_url,
-                  "buttons": [
+        response = templates.generic([
+            {
+                title: 'first item',
+                subtitle: 'best item ever',
+                image_url: attachment_url,
+                buttons: [
                     {
-                      "type": "postback",
-                      "title": "Yes!",
-                      "payload": "yes",
+                        "type": "postback",
+                        "title": "Yes!",
+                        "payload": "yes",
                     },
                     {
-                      "type": "postback",
-                      "title": "No!",
-                      "payload": "no",
+                        "type": "postback",
+                        "title": "No!",
+                        "payload": "no",
                     }
-                  ],
-                }]
-              }
-            }}
+                ]
+            }
+        ])
     }
     callSendAPI(sender_psid, response)
 }
