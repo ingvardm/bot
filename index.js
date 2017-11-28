@@ -9,8 +9,8 @@ app.set('port', port)
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
-app.get('/', (request, respnonse) => {
-    response.send('working!')
+app.get('/', (req, res) => {
+    res.send('working!')
 })
 
 app.listen(port, () => {
