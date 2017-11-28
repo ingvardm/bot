@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "botkit": "^0.6.7",
-    "connect": "^3.6.5"
+    "connect": "^3.6.5",
+    "express": "^4.16.2",
+    "request": "^2.83.0"
   }
 }

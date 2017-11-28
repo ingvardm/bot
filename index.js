@@ -1,6 +1,18 @@
-const connect = require('connect')
-const port = 8080
+const express = require('express')
+const bodyParser = require('body-parser')
+const request = require('request')
 
-connect().listen(port, function(){
-    console.log(`Server running on ${port}`)
-});
+const app = express
+const port = process.env.PORT || 5000
+
+app.set('port', port)
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+
+app.get('/', (request, respnonse) => {
+    response.send('working!')
+})
+
+app.listen(port, () => {
+    console.log(`listening on port ${port}`)
+})
