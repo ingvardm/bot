@@ -11,8 +11,9 @@ app.set('port', port)
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
-routs.forEach(rout => app.get(rout.path, rout.callback))
+routs.get.forEach(rout => app.get(rout.path, rout.callback))
+routs.post.forEach(rout => app.post(rout.path, rout.callback))
 
 app.listen(port, () => {
-    console.log(`running on http://localhost:${port}/`)
+    console.log(`running on localhost:${port}/`)
 })
