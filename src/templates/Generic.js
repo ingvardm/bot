@@ -1,8 +1,9 @@
 class Generic{
-    constructor() {}
-    type = "template"
-    payload = {
-        template_type: "generic"
+    constructor() {
+        this.type = "timplate"
+        this.payload = {
+            template_type: "generic"
+        }
     }
 }
 
