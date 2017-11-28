@@ -21,6 +21,7 @@ const elements = [{
 class Image extends Generic {
     constructor(url){
         super()
+        this.payload.elements = elements
         this.payload.elements[0].image_url = url
     }
 }
