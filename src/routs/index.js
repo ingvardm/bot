@@ -4,11 +4,11 @@ module.exports = [
         callback: (req, res) => res.send('working!')
     },
     {
-        path: '/test_rout',
-        callback: (req, res) => res.send('test rout')
-    },
-    {
-        path: '/say/:word',
-        callback: (req, res) => res.send(req.params.word)
+        path: '/webhook/',
+        callback: (req, res) => {
+            if(req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me')
+                res.send(req.query['hub.challange'])
+            else res.send('nope!')
+        }
     }
 ]
