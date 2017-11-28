@@ -6,7 +6,7 @@ module.exports = [
     {
         path: '/webhook/',
         callback: (req, res) => {
-            if(req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me')
+            if(req.query['hub.verify_token'] === 'enkqwenfkevkzxieckvulafpfhdahkrulshtv')
                 res.send(req.query['hub.challange'])
             else res.send('nope!')
         }
