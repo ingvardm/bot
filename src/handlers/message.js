@@ -11,6 +11,7 @@ const message = (sender_psid, received_message) => {
         let attachment_url = received_message.attachments[0].payload.url
         response = {attachment: new Image(attachment_url)}
         console.log(response)
+        console.log(response.attachment.payload.elements[0])
     }
     callSendAPI(sender_psid, response)
 }
