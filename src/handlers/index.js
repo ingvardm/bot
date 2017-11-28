@@ -3,4 +3,4 @@ const postBack = require('./post-back')
 const callSendAPI = require('./call-send-api')
 const subscribe = require('./subscribe')
 
-module.exports = { message, subscribe, postBack, callSendAPI }
+module.exports = { message, subscribe, postBack }

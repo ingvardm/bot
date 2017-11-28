@@ -1,4 +1,3 @@
-const { FB_PAGE_ACCESS_TOKEN } = require('../tokens')
 const { subscribe, message, postBack, callSendApi } = require('../handlers')
 
 module.exports = [
