@@ -17,7 +17,7 @@ const initialize = (port) => {
     controller.api.messenger_profile.menu(botMenu)
 
     conversations.forEach(entry => {
-        let { trigger, actions, callback } = conversations.entry
+        let { trigger, actions, callback } = entry
         controller.hears(trigger, actions, callback);
     })
 }
