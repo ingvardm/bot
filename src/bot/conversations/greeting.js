@@ -1,3 +1,5 @@
+const controller = require('../controller')
+
 module.exports = {
     trigger: ['^hello', '^hi'],
     actions: 'message_received,facebook_postback',
