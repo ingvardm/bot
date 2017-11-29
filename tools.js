@@ -3,8 +3,8 @@ const { tokens } = require('./config')
 console.log(tokens)
 
 const getMissingTokens = () => Object.keys(tokens).filter(token => {
-    console.log(tokens.token)
-    return false
+    console.log(!tokens.token)
+    return !tokens.token
 })
 const logErrorAndExit = message => {
     console.error(message)
