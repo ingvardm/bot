@@ -5,7 +5,7 @@ const setupPlugins = require('./setup-plugins')
 const attachEvents = require('./attach-events')
 const bot = controller.spawn({})
 
-const initialize = (port) => {
+const initialize = port => {
     startServer(port, bot)
     setupPlugins()
     configureMessenger()

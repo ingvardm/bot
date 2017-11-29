@@ -2,8 +2,8 @@ const controller = require('./controller')
 const conversations = require('./conversations')
 
 const attachEvents = () => {
-    conversations.forEach(entry => {
-        let { trigger, actions, callback } = entry
+    conversations.forEach(event => {
+        let { trigger, actions, callback } = event
         controller.hears(trigger, actions, callback)
     })
 }

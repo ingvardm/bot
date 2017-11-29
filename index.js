@@ -4,5 +4,7 @@ const bot = require('./src/bot')
 
 const missingTokens = getMissingTokens(tokens)
 
-missingTokens.length && logErrorAndExit(`Error: missing some tokens: ${missingTokens.join(', ')}`)
+if(missingTokens.length)
+    logErrorAndExit(`Missing tokens: ${missingTokens.join(', ')}`)
+
 bot.initialize(port)
