@@ -1,5 +1,6 @@
 const controller = require('./controller')
 const startServer = require('./start-server')
+const configureMessenger = require('./configure-messenger')
 const setupPlugins = require('./setup-plugins')
 const attachEvents = require('./attach-events')
 const bot = controller.spawn({})
