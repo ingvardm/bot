@@ -1,5 +1,5 @@
 module.exports = {
-    trigger: 'quick',
+    trigger: ['quick'],
     actions: 'message_received',
     callback: (bot, message) => {
         bot.reply(message, {
