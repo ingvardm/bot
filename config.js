@@ -4,6 +4,10 @@ const tokens = {
     APP_SECRET: process.env.APP_SECRET,
 }
 
+const db = {
+    uri: process.env.MONGODB_URI
+}
+
 const port = process.env.PORT || 8080
 
-module.exports = { tokens, port }
+module.exports = { tokens, port, db }
