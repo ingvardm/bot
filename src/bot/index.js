@@ -11,9 +11,9 @@ const initialize = (port) => {
         });
     });
 
-    // controller.api.nlp.enable();
-    // controller.api.messenger_profile.greeting('Hello! I\'m a Botkit bot!');
-    // controller.api.messenger_profile.get_started('sample_get_started_payload');
+    controller.api.nlp.enable();
+    controller.api.messenger_profile.greeting('Hello! I\'m a Botkit bot!');
+    controller.api.messenger_profile.get_started('sample_get_started_payload');
     // controller.api.messenger_profile.menu(botMenu)
 
     conversations.forEach(entry => {
