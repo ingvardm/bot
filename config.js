@@ -1,6 +1,13 @@
-const { FB_PAGE_ACCESS_TOKEN, FB_VERIFY_TOKEN, APP_SECRET, MONGODB_URI } = process.env
-const tokens = { FB_PAGE_ACCESS_TOKEN, FB_VERIFY_TOKEN, APP_SECRET }
-const db = { uri: MONGODB_URI }
-const port = process.env.PORT || 8080
+const { FB_PAGE_ACCESS_TOKEN, FB_VERIFY_TOKEN, APP_SECRET, MONGODB_URI, PORT } = process.env
 
-module.exports = { tokens, port, db }
+module.exports = {
+    tokens: {
+        FB_PAGE_ACCESS_TOKEN,
+        FB_VERIFY_TOKEN,
+        APP_SECRET
+    },
+    port: PORT || 8080,
+    db: {
+        uri: MONGODB_URI
+    }
+}
