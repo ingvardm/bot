@@ -5,8 +5,8 @@ const botConfig = {
     log: true,
     access_token: FB_PAGE_ACCESS_TOKEN,
     verify_token: FB_VERIFY_TOKEN,
-    app_secret: APP_SECRET,
-    validate_requests: true
+    // app_secret: APP_SECRET,
+    // validate_requests: true
 }
 
 module.exports = botConfig
