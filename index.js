@@ -1,6 +1,6 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const routs = require('./src/routs')
+// const express = require('express')
+// const bodyParser = require('body-parser')
+// const routs = require('./src/routs')
 const { defaultPort } = require('./config')
 const { getMissingTokens, logErrorAndExit } = require('./tools')
 const bot = require('./src/bot')
@@ -8,7 +8,7 @@ const bot = require('./src/bot')
 const missingTokens = getMissingTokens()
 missingTokens.length && logErrorAndExit(`Error: missing some tokens: ${missingTokens.join(', ')}`)
 
-const app = express()
+// const app = express()
 const port = process.env.PORT || defaultPort
 bot.initialize(port)
 
