@@ -4,15 +4,6 @@ const tokens = {
     APP_SECRET: process.env.APP_SECRET,
 }
 
-const defaultPort = 8080
+const port = process.env.PORT || 8080
 
-module.exports = {
-    tokens,
-    defaultPort,
-    facebookPostMessage: {
-        "uri": "https://graph.facebook.com/v2.6/me/messages",
-        "qs": { "access_token": tokens.FB_PAGE_ACCESS_TOKEN },
-        "method": "POST",
-        "json": ""
-    }
-}
+module.exports = { tokens, port }

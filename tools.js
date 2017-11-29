@@ -1,6 +1,5 @@
-const { tokens } = require('./config')
+const getMissingTokens = tokens => Object.keys(tokens).filter(token => !tokens[token])
 
-const getMissingTokens = () => Object.keys(tokens).filter(token => !tokens[token])
 const logErrorAndExit = message => {
     console.error(message)
     process.exit(1)
