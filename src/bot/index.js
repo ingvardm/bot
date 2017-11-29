@@ -11,8 +11,8 @@ const initialize = (port) => {
         });
     });
 
-    // controller.api.nlp.enable();
-    // controller.api.messenger_profile.greeting('Hello! I\'m a Botkit bot!');
+    controller.api.nlp.enable();
+    controller.api.messenger_profile.greeting('Hello! I\'m a Botkit bot!');
     // controller.api.messenger_profile.get_started('sample_get_started_payload');
     // controller.api.messenger_profile.menu(botMenu)
 
@@ -20,16 +20,6 @@ const initialize = (port) => {
         let { trigger, actions, callback } = entry
         controller.hears(trigger, actions, callback);
     })
-
-    controller.hears(['^hello', '^hi'], 'message_received,facebook_postback', function(bot, message) {
-        controller.storage.users.get(message.user, function(err, user) {
-            if (user && user.name) {
-                bot.reply(message, 'Hello ' + user.name + '!!');
-            } else {
-                bot.reply(message, 'Hello.');
-            }
-        });
-    });
 }
 
 module.exports = { initialize }
