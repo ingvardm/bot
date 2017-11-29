@@ -7,7 +7,7 @@ const botConfig = {
     verify_token: FB_VERIFY_TOKEN,
     app_secret: APP_SECRET,
     validate_requests: true,
-    storage: mongoStorage
+    storage: DB
 }
 
 module.exports = botConfig
