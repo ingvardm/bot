@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "botkit": "^0.6.7",
-    "botkit-storage-mongo": "^1.0.7"
-  }
+    "botkit-storage-mongo": "^1.0.7",
+    "snyk": "^1.88.0"
+  },
+  "snyk": true
 }
