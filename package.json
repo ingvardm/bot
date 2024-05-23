@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "botkit": "^0.6.7",
+    "botkit": "^0.6.11",
     "botkit-storage-mongo": "^1.0.7"
   }
 }
